@@ -10,13 +10,20 @@ region or resulting file and obtain confirmation before transmitting it.
 omarchy screenshot                            # Interactive smart-region flow
 omarchy capture screenshot region             # Select a region
 omarchy capture screenshot windows            # Pick a window
-omarchy capture screenshot fullscreen save    # Save the full screen without the editor
+omarchy capture screenshot fullscreen save    # Save the full screen without the preview
+omarchy capture screenshot scroll             # Capture and stitch a scrolling region
+omarchy screenshot --editor=overlay           # Annotate before output
 ```
 
-The first screenshot argument selects `smart`, `region`, `windows`, or
-`fullscreen`; the second selects `slurp`, `copy`, or `save`. `save` skips the
-annotation editor and prints the saved path. Files land in the configured
-Pictures directory; `OMARCHY_SCREENSHOT_DIR` overrides it.
+The first screenshot argument selects the Omasnap mode: `smart`, `region`,
+`windows`, `fullscreen`, or `scroll`. By default a capture saves to disk,
+copies to the clipboard, and shows a preview for 10 seconds whose Edit action
+annotates it; `--editor=overlay` or `--editor=window` edits before output. A
+second argument of `copy` or `save` skips the preview and sends the screenshot
+straight to that destination. Files land in `~/Pictures/Screenshots` by
+default; `OMASNAP_SCREENSHOT_DIR` overrides it, and the Omarchy command also
+honors the legacy `OMARCHY_SCREENSHOT_DIR`. Set `[output] autosave = false` in
+`~/.config/omasnap/omasnap.conf` to disable automatic saving.
 
 A screenshot is complete when the output exists or is present on the clipboard,
 the intended content is visible, and unrelated sensitive content is excluded.
@@ -45,7 +52,9 @@ exists, and playback contains the requested interval with the intended audio
 and webcam tracks.
 
 If startup fails, rerun with `OMARCHY_SCREENRECORD_DEBUG=true`; diagnostics are
-written to `/tmp/omarchy-screenrecord.log`.
+written to `$XDG_RUNTIME_DIR/omarchy-screenrecord.log`, or
+`${XDG_STATE_HOME:-$HOME/.local/state}/omarchy/omarchy-screenrecord.log`
+without a session runtime directory.
 
 ## Text Capture
 

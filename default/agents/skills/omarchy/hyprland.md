@@ -58,14 +58,22 @@ Write user bindings in `~/.config/hypr/bindings.lua`:
 ```lua
 o.bind("SUPER + SHIFT + R", "SSH", "alacritty -e ssh your-server")
 o.bind("SUPER + B", "Browser", { launch = "chromium" })
+o.bind("SUPER + M", "Theme menu", { menu = "theme" })
+o.bind("SUPER + N", "Network", { panel = "omarchy.network" })
 ```
 
-When the key is already bound, call `hl.unbind(...)` before the replacement and
-tell the user what the key previously did:
+Prefer `{ menu = ... }` and `{ panel = ... }` over running `omarchy-menu toggle
+...` or `omarchy-shell shell toggle ...` as a command. Routes and panels listed
+in `$OMARCHY_PATH/default/omarchy/shortcuts` go straight to the running shell
+as Hyprland global shortcuts; any other route or panel still works, through the
+command.
+
+When the key is already bound, use `o.rebind(...)`, which takes the same
+arguments as `o.bind(...)`, and tell the user what the key previously did. Use
+`hl.unbind(...)` only to remove a binding without replacing it:
 
 ```lua
-hl.unbind("SUPER + F") -- Previously fullscreen
-o.bind("SUPER + F", "File manager", { launch = "nautilus" })
+o.rebind("SUPER + F", "File manager", { launch = "nautilus" }) -- Previously fullscreen
 ```
 
 Keybinding work is complete when the old action no longer fires, the new action

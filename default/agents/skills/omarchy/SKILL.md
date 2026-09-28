@@ -9,7 +9,7 @@ description: >
   backgrounds, wallpapers, colors, and fonts; Alacritty, Foot, Kitty, and
   Ghostty configuration; hooks; screenshots, recordings, OCR, transcoding,
   LocalSend, and Taildrop; troubleshooting; and issue reporting. For upstream
-  source work, clone basecamp/omarchy and follow its AGENTS.md instead.
+  source work, clone omacom/omarchy and follow its AGENTS.md instead.
 ---
 
 # Omarchy System Operations
@@ -139,6 +139,6 @@ been applied and verified.
 ## Upstream Source Work
 
 Installed-system operation and upstream development are separate contexts. For
-an upstream code change, clone or fork `basecamp/omarchy`, enter that checkout,
+an upstream code change, clone or fork `omacom/omarchy`, enter that checkout,
 and follow its `AGENTS.md` and task guides. Continue using this skill only for
 changes or verification performed against the user's installed system.

@@ -26,9 +26,14 @@ portable `#!/bin/bash` script and handle the event arguments documented below.
 | `battery-low` | Low battery; percentage in `$1` |
 | `font-set` | After a font change; font name in `$1` |
 | `post-boot` | After the desktop starts |
-| `post-update` | After system packages and migrations, before AUR, Mise, and orphan-package updates |
-| `pre-refresh-pacman` | Before `omarchy refresh pacman` resynchronizes packages |
+| `post-update` | After system packages, migrations, orphan-package cleanup, and service restarts; before Mise and AUR updates |
+| `pre-refresh-pacman` | After `omarchy refresh pacman` rewrites the package configuration, before it updates packages |
 | `theme-set` | After a theme change; theme slug in `$1` |
+
+`pre-refresh-pacman` runs behind the no-update wrapper with the sudo timestamp
+revoked before and after it, so a hook that invokes `sudo` authenticates for
+itself and none of that authorization carries into the package transaction.
+Custom repositories and `IgnorePkg` entries it writes shape that transaction.
 
 ## Implementation Loop
 
