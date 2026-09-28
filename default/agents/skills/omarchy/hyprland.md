@@ -117,7 +117,9 @@ and the Lua change loop is clean.
 
 With user confirmation, reset the shipped user Lua files (`hyprland.lua`,
 `bindings.lua`, `monitors.lua`, `input.lua`, `looknfeel.lua`, `autostart.lua`)
-with the command below. Additional user modules are left untouched.
+with the command below. Additional user modules are left untouched. It also
+resets the toggle state in `~/.local/state/omarchy/toggles/hypr/flags.lua`,
+without a backup.
 
 ```bash
 omarchy refresh hyprland

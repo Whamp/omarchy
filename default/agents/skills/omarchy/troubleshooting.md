@@ -28,8 +28,10 @@ not complete diagnosis.
 ## Component Recovery
 
 Discover available refresh targets with `omarchy refresh --help`. A component
-refresh replaces its user configuration with packaged defaults and creates a
-timestamped backup of each existing file whose content differed:
+refresh replaces its user configuration with packaged defaults. Most go through
+`omarchy refresh config`, which keeps a timestamped backup of each existing
+file whose content differed; read the component's command to see what else it
+replaces and whether that is backed up:
 
 ```bash
 omarchy refresh <component>
@@ -41,9 +43,9 @@ command resolves that argument in its source and destination paths, so a parent
 segment can replace state outside `~/.config`.
 
 Obtain user confirmation immediately before refreshing. State the exact target
-path, what customization will be replaced, and where the backup should appear.
-Afterward, confirm a backup exists for every file that differed, apply the restored component, and repeat
-the original reproduction.
+path, what customization will be replaced, and which files will be backed up
+where. Afterward, confirm every backup the command reported exists, apply the
+restored component, and repeat the original reproduction.
 
 Use `omarchy reinstall` only when narrower diagnosis and component recovery
 cannot restore the installation. Before running it, obtain confirmation and
