@@ -30,6 +30,7 @@ Choose one shape before editing:
 - **Overlay** — small changes to a stock theme. Create the same theme slug under `~/.config/omarchy/themes/` and include only changed files; user files override packaged files.
 - **Fork** — an independent variant of a stock theme. Copy the complete packaged theme to a new user-owned slug.
 - **New theme** — a theme designed without a stock base. Create a new user-owned slug and supply its required files.
+
 ## What a Theme Installed From a Repo May Not Contain
 
 A theme the user wrote by hand in `~/.config/omarchy/themes` is unrestricted, as
@@ -56,12 +57,11 @@ Use an overlay unless the requested result needs an independently named or
 fully divergent theme.
 
 ## Overlay a Stock Theme
-Both write into `~/.config/omarchy/themes`, where a theme the user wrote is
-unrestricted — the list above applies only to a theme cloned from a repo.
 
-**Overlay (preferred for small tweaks):** create a user theme directory with
-the SAME slug containing only the files you want to change. When the theme is
-applied, the stock theme is copied first and your files win on top:
+Overlays and forks both write into `~/.config/omarchy/themes`, where a theme
+the user wrote is unrestricted — the list above applies only to a theme cloned
+from a repo. Create a user theme directory with the same slug containing only
+the files to change:
 
 ```bash
 mkdir -p ~/.config/omarchy/themes/catppuccin
