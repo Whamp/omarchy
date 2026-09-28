@@ -128,13 +128,14 @@ an available authentication path without broadening permissions.
 ## Resets and Destructive Operations
 
 `omarchy refresh <component>` replaces user configuration with packaged
-defaults and normally creates a backup. Obtain confirmation immediately before
+defaults. It backs up an existing file only when its content differed, and a
+file that was missing is restored without one. Obtain confirmation immediately before
 running a refresh, reinstall, package removal, or other operation that discards
 or replaces user state. State the affected path and available recovery first.
 
 Use [`troubleshooting.md`](troubleshooting.md) to diagnose before resetting.
-A reset is complete only when its backup exists and the restored component has
-been applied and verified.
+A reset is complete only when every replaced file whose content differed has a
+backup and the restored component has been applied and verified.
 
 ## Upstream Source Work
 

@@ -38,9 +38,9 @@ Custom repositories and `IgnorePkg` entries it writes shape that transaction.
 ## Implementation Loop
 
 1. Inspect existing scripts under the target hook name so the new script has one responsibility and a distinct filename.
-2. Run the source script directly with representative arguments.
+2. When the script is safe to run outside its event, run it directly with representative arguments.
 3. Install it with `omarchy hook install`.
-4. Invoke a safe hook directly with `omarchy hook <name> [args...]`, or trigger the real event when direct invocation would not represent its environment.
+4. Trigger the real event when doing so is safe. `omarchy hook <name> [args...]` runs every script for that event, not only the new one, and none of the environment the event sets up — `pre-refresh-pacman` loses its sudo revocation and no-update wrapper — so use it only when every script for the event is safe to run that way.
 5. Observe the intended side effect and inspect any script output or logs.
 
 Example:
@@ -54,13 +54,13 @@ printf 'Theme changed to: %s\n' "$theme_name"
 ```
 
 Hook work is complete when the installed copy exists under the intended
-`<name>.d/`, representative execution exits successfully, and the intended side
-effect has been observed. Report any real event that was unsafe or impractical
+`<name>.d/`, a safe representative execution exits successfully, and the
+intended side effect has been observed. Report any real event that was unsafe or impractical
 to trigger as unverified.
 
 ## Recovery
 
 Disable a hook by moving its user-owned script outside the hook directory;
 restore it by moving the same file back. Obtain confirmation before deleting a
-user script. Recovery is complete when `omarchy hook <name> [args...]` no
-longer runs the removed behavior while other scripts for that event still run.
+user script. Recovery is complete when the script is no longer under the hook
+directory and the other scripts for that event remain in place.

@@ -115,11 +115,13 @@ and the Lua change loop is clean.
 
 ## Recovery
 
-With user confirmation, reset all user Lua files with:
+With user confirmation, reset the shipped user Lua files (`hyprland.lua`,
+`bindings.lua`, `monitors.lua`, `input.lua`, `looknfeel.lua`, `autostart.lua`)
+with the command below. Additional user modules are left untouched.
 
 ```bash
 omarchy refresh hyprland
 ```
 
 Reset `hyprsunset.conf` separately with `omarchy refresh hyprsunset`. Confirm the
-created backup, reload the owner, and repeat the relevant completion checks.
+backups of files that differed, reload the owner, and repeat the relevant completion checks.

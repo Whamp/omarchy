@@ -89,5 +89,5 @@ After user confirmation:
 omarchy refresh shell
 ```
 
-Confirm the backup, check the restored JSON, and observe the affected shell
+Confirm the backup when `shell.json` differed, check the restored JSON, and observe the affected shell
 surface before reporting recovery complete.
