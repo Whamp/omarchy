@@ -1,15 +1,18 @@
 ---
 name: omarchy
 description: >
-  REQUIRED on Omarchy for agent-driven OS operation and customization. Use for
-  Omarchy commands, packages, updates, setup, reminders, and power actions;
-  Hyprland keybindings, window rules, monitors, workspaces, animations, gaps,
-  borders, blur, opacity, input, night light, and screen sharing; Quickshell
-  bar, widgets, plugins, notifications, menus, idle, and lock behavior; themes,
-  backgrounds, wallpapers, colors, and fonts; Alacritty, Foot, Kitty, and
-  Ghostty configuration; hooks; screenshots, recordings, OCR, transcoding,
-  LocalSend, and Taildrop; troubleshooting; and issue reporting. For upstream
-  source work, clone omacom/omarchy and follow its AGENTS.md instead.
+  REQUIRED on Omarchy for agent-driven OS operation and customization. Use when
+  editing ANY file in ~/.config/, ~/.config/hypr/, ~/.config/omarchy/,
+  ~/.config/alacritty/, ~/.config/foot/, ~/.config/kitty/, or ~/.config/ghostty/.
+  Use for Omarchy commands, packages, updates, setup, reminders, and power
+  actions; Hyprland keybindings, window rules, window behavior, monitors,
+  workspaces, animations, gaps, borders, blur, opacity, input, night light, and
+  screen sharing; Quickshell bar, widgets, plugins, notifications, menus, idle,
+  and lock behavior; themes, backgrounds, wallpapers, colors, and fonts;
+  Alacritty, Foot, Kitty, and Ghostty configuration; hooks; screenshots, screen
+  recordings, OCR, transcoding, LocalSend, and Taildrop; troubleshooting; and
+  issue reporting. For upstream source work, clone omacom/omarchy and follow
+  its AGENTS.md instead.
 ---
 
 # Omarchy System Operations
