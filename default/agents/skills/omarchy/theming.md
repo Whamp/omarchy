@@ -103,7 +103,7 @@ Theme customization is complete when:
 - the requested colors, background, and font render on every affected surface;
 - no unrelated packaged theme file was copied into an overlay.
 
-To reverse an overlay, remove only its user-owned changed files and reapply the
-stock theme. To reverse a fork or new theme, select another theme before
+To reverse an overlay, restore the preserved copy of each file that existed
+before the task, remove only the files the task created, and reapply the theme. To reverse a fork or new theme, select another theme before
 removing its user directory. Obtain confirmation before deleting user theme
 files.
