@@ -43,8 +43,8 @@ the terminal configs `alacritty.toml`, `foot.ini`, `ghostty.conf` and
 through `$OMARCHY_PATH/default/themed/*.tpl`, and named on stderr.
 
 Symlinks are dropped wherever they appear in a cloned theme, since one can point
-at any file the session can read. Everything else a cloned theme ships is kept,
-including `btop.theme`, `chromium.theme`, `helix.toml`, `icons.theme`,
+at any file the session can read, and so are hidden files and directories.
+Everything else a cloned theme ships is kept, including `btop.theme`, `chromium.theme`, `helix.toml`, `icons.theme`,
 `keyboard.rgb` and `shell.toml`.
 Omarchy tells a cloned theme from the user's own by the `.git` directory a clone
 leaves behind.
