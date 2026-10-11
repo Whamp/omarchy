@@ -5,8 +5,8 @@ description: >
   editing ANY file in ~/.config/, ~/.config/hypr/, ~/.config/omarchy/,
   ~/.config/alacritty/, ~/.config/foot/, ~/.config/kitty/, or ~/.config/ghostty/.
   Use for Omarchy commands, packages, updates, setup, reminders, and power
-  actions; Hyprland keybindings, window rules, window behavior, monitors,
-  workspaces, animations, gaps, borders, blur, opacity, input, night light, and
+  actions; Hyprland keybindings, window rules, window behavior, layer rules,
+  monitors, workspaces, animations, gaps, borders, blur, opacity, input, night light, and
   screen sharing; Quickshell bar, widgets, plugins, notifications, menus, idle,
   and lock behavior; themes, backgrounds, wallpapers, colors, and fonts;
   Alacritty, Foot, Kitty, and Ghostty configuration; hooks; screenshots, screen
